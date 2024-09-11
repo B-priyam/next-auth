@@ -11,7 +11,7 @@ import { apiAuthPrefix, authRoutes, DEFAULT_LOGIN_REDIRECT, publicRoutes } from 
 const { auth } = NextAuth(authConfig)
 
 
-export default auth ((req)=>{
+export default auth (function middleware(req:any){
     const {nextUrl} = req
     const isLoggedIn = !!req.auth
 
